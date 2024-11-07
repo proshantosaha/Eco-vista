@@ -15,15 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <div className="wrapper">
+      <div className="overlay"></div>
+
       <Image
         src="/background.png"
         className="bg-img"
         width={700}
         height={1200}
-        alt="background"
       />
-
-      <div className="overlay"></div>
 
       <main className="!z-50 w-full">
         <div className="container">
