@@ -2,8 +2,8 @@ import { getWindData } from "@/lib/weather-info";
 import React from "react";
 import Card from "./Card";
 
-const WindComponent = () => {
-  getWindData;
+const WindComponent = async ({ lat, lon }) => {
+  const { speed, deg } = await getWindData(lat, lon);
   return (
     <Card>
       {" "}
@@ -16,8 +16,8 @@ const WindComponent = () => {
           width={80}
           height={80}
         />
-        <h3 className="feature-title">Rain</h3>
-        <span className="feature-name">Moderate Rain</span>
+        <h3 className="feature-title">{speed} meter/sec</h3>
+        <span className="feature-name">{deg} degrees</span>
       </div>
     </Card>
   );
