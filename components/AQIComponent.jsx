@@ -27,6 +27,7 @@ const AQIComponent = async ({ lat, lon }) => {
 
   return (
     <Card>
+      <h6 class="feature-name">Air Pollution & Quality</h6>
       <div className="mt-3 space-y-2 lg:space-y-3">
         {/* <!-- item --> */}
         <div className="flex items-center justify-between gap-4">
