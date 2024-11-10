@@ -1,5 +1,6 @@
 import { getLocationData } from "@/lib/location-info";
 import React from "react";
+import LocationSwitcher from "./LocationSwitcher";
 
 const Locationinfo = async ({ lat, lon }) => {
   const locationInfo = await getLocationData(lat, lon);
@@ -8,8 +9,9 @@ const Locationinfo = async ({ lat, lon }) => {
       <div>
         <div class="mb-2 flex items-center gap-2">
           <h2 class="text-3xl font-bold text-white lg:text-4xl 2xl:text-[40px]">
-            {locationInfo.continent}
+            {locationInfo?.continent}
           </h2>
+          <LocationSwitcher />
         </div>
         <p class="text-lg text-[#C4C4C4] lg:text-xl">
           {locationInfo?.countryName} | {locationInfo?.city}
