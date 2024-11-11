@@ -1,9 +1,12 @@
 import { getLocationData } from "@/lib/location-info";
 import React from "react";
 import LocationSwitcher from "./LocationSwitcher";
+import { getFormateDate } from "@/utils/date-util";
 
 const Locationinfo = async ({ lat, lon }) => {
   const locationInfo = await getLocationData(lat, lon);
+  console.log(locationInfo);
+
   return (
     <div class="col-span-12 flex flex-col justify-end lg:col-span-8 2xl:col-span-9">
       <div>
@@ -17,8 +20,9 @@ const Locationinfo = async ({ lat, lon }) => {
           {locationInfo?.countryName} | {locationInfo?.city}
         </p>
         <div class="flex items-center gap-2 text-xs text-[#92B6F5] lg:text-sm">
-          <span>{new Date().toLocaleTimeString()}</span>{" "}
-          <span>{new Date().toDateString()}</span>
+          {/* <span>{new Date().toLocaleTimeString()}</span> */}
+          {getFormateDate(false)}
+          {/* <span>{new Date().toDateString()}</span> */}
         </div>
       </div>
     </div>

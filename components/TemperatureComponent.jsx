@@ -16,9 +16,11 @@ const TemperatureComponent = async ({ lat, lon }) => {
           width={80}
           height={80}
         />
-        <h3 className="feature-title">{temp}°C</h3>
+        <h3 className="feature-title">{Math.round(temp)}°C</h3>
 
-        <span className="feature-name">Feels Like {feels_like}°C</span>
+        <span className="feature-name">
+          Feels Like {Math.round(feels_like)}°C
+        </span>
       </div>
     </Card>
   );
